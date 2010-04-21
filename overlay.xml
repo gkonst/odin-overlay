@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<layman>
+  <overlay
+     type = "git"
+     src  = "git://github.com/KonstantinGrigoriev/odin-overlay.git"
+     name = "odin-overlay"
+     status = "unofficial"
+     contact = "Konstantin.V.Grigoriev@gmail.com">
+
+    <link>
+        http://github.com/KonstantinGrigoriev/odin-overlay
+    </link>
+
+    <description>
+      A Gentoo overlay with some soft useful for me and may be others.
+    </description>
+  </overlay>
+</layman>
+
