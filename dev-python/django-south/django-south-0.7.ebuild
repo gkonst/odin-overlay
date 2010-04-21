@@ -10,7 +10,7 @@ PYTHON_MODNAME="south"
 
 DESCRIPTION="Django South"
 HOMEPAGE="http://south.aeracode.org/"
-SRC_URI="http://www.aeracode.org/releases/south/south-${PV}.gz"
+SRC_URI="http://www.aeracode.org/releases/south/south-${PV}.tar.gz"
 
 SLOT="0"
 KEYWORDS="x86"
