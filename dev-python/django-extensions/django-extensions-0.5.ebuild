@@ -5,15 +5,18 @@
 
 inherit distutils
 
+EAPI="3"
+
 PYTHON_MODNAME="django_extensions"
 
-DESCRIPTION="Django Command Extensions"
-HOMEPAGE="http://code.google.com/p/django-command-extensions/"
-SRC_URI="http://django-command-extensions.googlecode.com/files/${P}.tar.gz"
+DESCRIPTION="Django Extensions"
+HOMEPAGE="http://github.com/django-extensions/django-extensions"
+SRC_URI="http://github.com/django-extensions/django-extensions/tarball/${PV} ->
+${P}.tgz"
 
 LICENSE="BSD || ( MIT GPL-2 )"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 IUSE="mysql postgres s3 sqlite vcard"
 
 DEPEND="dev-python/django[mysql?,postgres?,sqlite?]
