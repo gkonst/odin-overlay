@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Tiziano Müller
+# Copyright 1999-2010
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="2"
+EAPI="3"
 
 inherit distutils
 
