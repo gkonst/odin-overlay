@@ -20,3 +20,8 @@ RDEPEND="=www-apps/trac-0.11*"
 
 DOCS="README COPYING"
 
+src_install() {
+    distutils_src_install
+    rm "${D}"/usr/README
+    rm "${D}"/usr/COPYING
+}
