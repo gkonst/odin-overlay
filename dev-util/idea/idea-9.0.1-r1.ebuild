@@ -4,6 +4,8 @@
 
 inherit eutils versionator
 
+EAPI="3"
+
 SLOT="$(get_major_version)"
 RDEPEND=">=virtual/jdk-1.6"
 
