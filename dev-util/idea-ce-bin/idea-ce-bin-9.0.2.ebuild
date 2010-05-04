@@ -7,7 +7,9 @@ inherit eutils versionator
 EAPI="3"
 
 SLOT="$(get_major_version)"
-RDEPEND=">=virtual/jdk-1.6"
+DEPEND="!dev-util/idea-ce
+        >=virtual/jdk-1.6"
+RDEPEND="$DEPEND"
 
 MY_PV="95.66"
 MY_PN="idea"

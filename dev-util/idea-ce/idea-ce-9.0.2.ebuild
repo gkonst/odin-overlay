@@ -24,7 +24,8 @@ LICENSE="Apache-2"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND=">=virtual/jdk-1.6"
+DEPEND="!dev-util/idea-ce-bin
+        >=virtual/jdk-1.6"
 RDEPEND="$DEPEND"
 
 src_compile() {
