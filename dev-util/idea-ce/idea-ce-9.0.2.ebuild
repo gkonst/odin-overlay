@@ -17,7 +17,8 @@ QA_TEXTRELS="opt/${P}/bin/libbreakgen.so"
 DESCRIPTION="IntelliJ IDEA is an intelligent Java IDE : Community Edition"
 HOMEPAGE="http://jetbrains.com/idea/"
 EGIT_REPO_URI="git://git.jetbrains.org/idea/community.git"
-EGIT_BRANCH="idea/${MY_PV}"
+EGIT_BRANCH="maia"
+EGIT_COMMIT="8844750b25850e8d0dee0ca8393fc459cdc36aa9"
 #EGIT_PROJECT=""
 
 LICENSE="Apache-2"
@@ -27,6 +28,9 @@ IUSE=""
 DEPEND="!dev-util/idea-ce-bin
         >=virtual/jdk-1.6"
 RDEPEND="$DEPEND"
+src_prepare() {
+	sed -i "s:IC-90.SNAPSHOT:${MY_PV}:g" build/scripts/dist.gant
+}
 
 src_compile() {
 	eant build
