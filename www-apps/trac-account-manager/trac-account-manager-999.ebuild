@@ -6,9 +6,9 @@ inherit distutils subversion
 
 EAPI=3
 
-DESCRIPTION="Remote Procedure Call plugin for Trac"
-HOMEPAGE="http://trac-hacks.org/wiki/XmlRpcPlugin"
-ESVN_REPO_URI="http://trac-hacks.org/svn/xmlrpcplugin/trunk"
+DESCRIPTION="Account Manager plugin for Trac"
+HOMEPAGE="http://trac-hacks.org/wiki/AccountManagerPlugin"
+ESVN_REPO_URI="http://trac-hacks.org/svn/accountmanagerplugin/trunk"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -16,11 +16,9 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools"
-RDEPEND=">=www-apps/trac-0.11"
-
-DOCS="README.wiki"
+RDEPEND=">=www-apps/trac-0.12"
 
 src_install() {
 	distutils_src_install
-	rm "${D}"/usr/README.wiki
+	rm "${D}"/usr/README
 }

@@ -16,5 +16,5 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="dev-python/setuptools"
-RDEPEND="=www-apps/trac-0.11*"
+RDEPEND=">=www-apps/trac-0.11"
 
