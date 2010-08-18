@@ -7,7 +7,7 @@ inherit distutils
 
 EAPI="3"
 
-PYTHON_MODNAME="django_compressor"
+PYTHON_MODNAME="compressor"
 
 DESCRIPTION="Django Compressor"
 HOMEPAGE="http://github.com/mintchaos/django_compressor"
