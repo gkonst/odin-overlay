@@ -11,8 +11,7 @@ PYTHON_MODNAME="django_extensions"
 
 DESCRIPTION="Django Extensions"
 HOMEPAGE="http://github.com/django-extensions/django-extensions"
-SRC_URI="http://github.com/django-extensions/django-extensions/tarball/${PV} ->
-${P}.tgz"
+SRC_URI="http://github.com/django-extensions/django-extensions/tarball/${PV} -> ${P}.tar.gz"
 
 LICENSE="BSD || ( MIT GPL-2 )"
 SLOT="0"
@@ -27,3 +26,8 @@ DEPEND="dev-python/django[mysql?,postgres?,sqlite?]
 	vcard? ( dev-python/vobject )"
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+	unpack ${A}
+	# Workaround commit suffix from github.
+	mv "${WORKDIR}"/${PN}-* "${S}" || die
+}

@@ -22,3 +22,9 @@ DEPEND="dev-python/django
         dev-python/beautifulsoup"
 RDEPEND="${DEPEND}"
 
+src_unpack() {
+	unpack ${A}
+	# Workaround commit suffix from github.
+	mv "${WORKDIR}"/mintchaos-* "${S}" || die
+}
+
