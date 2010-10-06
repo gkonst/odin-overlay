@@ -36,7 +36,7 @@ done
 src_prepare() {
 	# fix compilation with qt 4.7, bug #335011
 	# patch: http://github.com/Arora/arora/commit/5ca8d4b93a284d2e96ba9c2413c4060814258a95
-	epatch "${FILESDIR}"/"${P}"_qt_4.7_build_fix.patch
+	#epatch "${FILESDIR}"/"${P}"_qt_4.7_build_fix.patch
 
 	# use Gentoo lingua designations
 	mv src/locale/sr_RS@latin.ts src/locale/sr@latin.ts
