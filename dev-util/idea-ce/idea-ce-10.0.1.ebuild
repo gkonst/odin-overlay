@@ -17,7 +17,7 @@ QA_TEXTRELS="opt/${P}/bin/libbreakgen.so"
 DESCRIPTION="IntelliJ IDEA is an intelligent Java IDE : Community Edition"
 HOMEPAGE="http://jetbrains.com/idea/"
 EGIT_REPO_URI="git://git.jetbrains.org/idea/community.git"
-EGIT_BRANCH="maia"
+EGIT_BRANCH="master"
 EGIT_COMMIT="c7e003108f34053d6a2230786d615fdfb48f2a8d"
 #EGIT_PROJECT=""
 
