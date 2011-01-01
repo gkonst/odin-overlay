@@ -30,9 +30,9 @@ src_install() {
 	cat > "${D}/usr/bin/${sbt_bin}" <<-EOF
 #!/bin/bash
 JAVA_OPTS=""
-for i in $*;
+for i in \$*;
 do
-if [[ $i == "--noformat" ]] ;
+if [[ \$i == "--noformat" ]] ;
 then JAVA_OPTS="-Dsbt.log.noformat=true" ;
 fi;
 done
