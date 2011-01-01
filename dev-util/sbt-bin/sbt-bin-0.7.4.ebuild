@@ -33,10 +33,10 @@ JAVA_OPTS=""
 for i in $*;
 do
 if [[ $i == "--noformat" ]] ;
-then JAVA_OPTS=-Dsbt.log.noformat=true ;
+then JAVA_OPTS="-Dsbt.log.noformat=true" ;
 fi;
 done
-java -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m -Xmx512M -Xss2M $JAVA_OPTS -jar ${dir}/${A} "\$*"
+java -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m -Xmx512M -Xss2M \$JAVA_OPTS -jar ${dir}/${A} "\$*"
 EOF
 	fperms 755 /usr/bin/${sbt_bin}
 }
