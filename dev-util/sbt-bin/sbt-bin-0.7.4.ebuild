@@ -30,13 +30,15 @@ src_install() {
 	cat > "${D}/usr/bin/${sbt_bin}" <<-EOF
 #!/bin/bash
 JAVA_OPTS=""
-for i in \$*;
+ARGS=""
+for i in "\$@";
 do
-if [[ \$i == "--noformat" ]] ;
-then JAVA_OPTS="-Dsbt.log.noformat=true" ;
+if [[ \$i == -D* ]] ;
+then JAVA_OPTS="\$JAVA_OPTS \$i"
+else ARGS="\$ARGS \$i"
 fi;
 done
-java -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m -Xmx512M -Xss2M \$JAVA_OPTS -jar ${dir}/${A} \$*
+java -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m -Xmx512M -Xss2M \$JAVA_OPTS -jar ${dir}/${A} \$ARGS
 EOF
 	fperms 755 /usr/bin/${sbt_bin}
 }
