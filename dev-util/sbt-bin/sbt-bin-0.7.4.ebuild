@@ -29,7 +29,16 @@ src_install() {
 	local sbt_bin="sbt"
 	cat > "${D}/usr/bin/${sbt_bin}" <<-EOF
 #!/bin/bash
-java -Xmx512M -jar ${dir}/${A} "\$@"
+JAVA_OPTS=""
+ARGS=""
+for i in "\$@";
+do
+if [[ \$i == -D* ]] ;
+then JAVA_OPTS="\$JAVA_OPTS \$i"
+else ARGS="\$ARGS \$i"
+fi;
+done
+java -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m -Xmx512M -Xss2M \$JAVA_OPTS -jar ${dir}/${A} \$ARGS
 EOF
 	fperms 755 /usr/bin/${sbt_bin}
 }
