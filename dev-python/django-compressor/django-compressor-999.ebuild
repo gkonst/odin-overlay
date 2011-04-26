@@ -7,14 +7,13 @@ PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils
+inherit git distutils
 
 PYTHON_MODNAME="compressor"
 
 DESCRIPTION="Django Compressor"
 HOMEPAGE="http://github.com/mintchaos/django_compressor"
-SRC_URI="http://github.com/mintchaos/django_compressor/tarball/master ->
-${P}.tar.gz"
+EGIT_REPO_URI="git://github.com/mintchaos/django_compressor.git"
 
 LICENSE=""
 SLOT="0"
@@ -23,10 +22,4 @@ KEYWORDS="~x86"
 DEPEND="dev-python/django
         dev-python/beautifulsoup"
 RDEPEND="${DEPEND}"
-
-src_unpack() {
-	unpack ${A}
-	# Workaround commit suffix from github.
-	mv "${WORKDIR}"/mintchaos-* "${S}" || die
-}
 
