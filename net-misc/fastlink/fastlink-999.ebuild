@@ -2,6 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header:$
 
+EAPI="3"
+PYTHON_DEPEND="2"
+SUPPORT_PYTHON_ABIS="1"
+RESTRICT_PYTHON_ABIS="3.*"
+
 inherit eutils distutils git
 
 DESCRIPTION="Small and simple del.icio.us client."
@@ -11,13 +16,9 @@ EGIT_PROJECT="fastlink"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-lang/python-2.5"
+DEPEND=""
 RDEPEND="${DEPEND}"
-
-src_install() {
-	distutils_src_install
-}
 
