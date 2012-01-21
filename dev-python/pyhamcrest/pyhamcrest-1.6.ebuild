@@ -1,0 +1,44 @@
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/dev-java/hamcrest-core/hamcrest-core-1.1.ebuild,v 1.11 2012/01/01 22:31:49 sera Exp $
+
+EAPI="3"
+PYTHON_DEPEND="2"
+
+
+inherit distutils
+
+MY_PN="PyHamcrest"
+MY_P="${MY_PN}-${PV}"
+
+DESCRIPTION="Library of matchers for building test expressions."
+HOMEPAGE="http://code.google.com/p/${MY_PN}/"
+SRC_URI="http://hamcrest.googlecode.com/files/${MY_P}.tar.gz"
+LICENSE="BSD-2"
+SLOT="0"
+KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd ~amd64-linux ~x86-macos ~x64-solaris"
+IUSE=""
+
+DEPEND=""
+RDEPEND="${DEPEND}"
+
+S="${WORKDIR}/${MY_P}"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+#
+#	find . -name "*.jar" -delete || die
+#
+#	# These jars must be symlinked as specifying them using gentoo.classpath
+#	# does not work and both compilation and test fail
+#	java-pkg_jar-from --into lib/generator --build-only qdox-1.6 qdox.jar qdox-1.6.1.jar
+}
+
+#src_install() {
+#	java-pkg_newjar build/${P}.jar
+#
+#	dodoc README.txt CHANGES.txt || die
+#
+#	use source && java-pkg_dosrc ${PN}/src/main/java/org
+#}
