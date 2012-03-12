@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-RDEPEND="dev-libs/django
+RDEPEND="dev-python/django
 dev-python/django-appconf
 dev-python/versiontools"
 DEPEND="${RDEPEND}"
