@@ -22,7 +22,7 @@ src_unpack() {
 	cp ${DISTDIR}/${A} ${WORKDIR}
 }
 src_install() {
-	local dir="/usr/share/${P}"
+	local dir="/usr/share/${PN}"
 	insinto "${dir}"
 	doins -r *
 	fperms 755 "${dir}/${A}"
