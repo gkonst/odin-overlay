@@ -5,16 +5,17 @@
 
 EAPI=3
 
-DESCRIPTION="A build tool for Scala"
-HOMEPAGE="http://code.google.com/p/simple-build-tool/"
-SRC_URI="http://simple-build-tool.googlecode.com/files/sbt-launch-${PV}.jar -> sbt-launch-${PV}.jar"
+DESCRIPTION="Build tool for Scala and Java projects that aims to do the basics
+well."
+HOMEPAGE="https://github.com/harrah/xsbt/wiki"
+SRC_URI="http://typesafe.artifactoryonline.com/typesafe/ivy-releases/org.scala-tools.sbt/sbt-launch/${PV}/sbt-launch.jar -> sbt-launch-${PV}.jar"
 
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="x86 amd64"
 IUSE=""
 
-DEPEND=">=virtual/jdk-1.5"
+DEPEND=">=virtual/jdk-1.6"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
@@ -29,16 +30,7 @@ src_install() {
 	local sbt_bin="sbt"
 	cat > "${D}/usr/bin/${sbt_bin}" <<-EOF
 #!/bin/bash
-JAVA_OPTS=""
-ARGS=""
-for i in "\$@";
-do
-if [[ \$i == -D* ]] ;
-then JAVA_OPTS="\$JAVA_OPTS \$i"
-else ARGS="\$ARGS \$i"
-fi;
-done
-java -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m -Xmx512M -Xss2M \$JAVA_OPTS -jar ${dir}/${A} \$ARGS
+java -Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M -jar ${dir}/${A} "\$@"
 EOF
 	fperms 755 /usr/bin/${sbt_bin}
 }
