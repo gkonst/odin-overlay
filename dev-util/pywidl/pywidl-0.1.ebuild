@@ -15,6 +15,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=dev-python/ply-3.4:0"
+DEPEND=">=dev-python/ply-3.4:0 >=dev-python/mako-0.5.0:0"
 RDEPEND="${DEPEND}"
 
