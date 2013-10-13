@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="3"
+EAPI=5
 PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
-inherit git distutils
+inherit git-2 distutils
 
 DESCRIPTION="Simple script for automation kernel building, installing end etc."
 HOMEPAGE="http://github.com/KonstantinGrigoriev/build-kernel"
