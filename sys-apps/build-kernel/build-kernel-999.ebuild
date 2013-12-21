@@ -21,3 +21,9 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
+src_install() {
+    default
+
+    insinto /etc
+    doins build_kernel.conf.json
+}
