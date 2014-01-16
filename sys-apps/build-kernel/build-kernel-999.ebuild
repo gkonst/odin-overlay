@@ -22,7 +22,7 @@ DEPEND=""
 RDEPEND="${DEPEND}"
 
 src_install() {
-    default
+    distutils_src_install
 
     insinto /etc
     doins build_kernel.conf.json
